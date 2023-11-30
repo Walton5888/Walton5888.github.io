@@ -14,7 +14,7 @@ Visit this link to create your account: https://www.digitalocean.com/
 ## Step 3: SSH into the VM 
 
 * Access the terminal on your computer
-* Type this in: ssh root@<your_ip_address>
+* Type this in: ssh root@your_ip_address
 * Replace your_ip_address with your actual IP address
 * Type in your password, and you should have access to your droplet
 
