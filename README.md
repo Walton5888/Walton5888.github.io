@@ -72,4 +72,5 @@ AllowedIPs = 10.0.0.2/32
 * Place your phone's camera at the QR code in your terminal.
 * You should now have access to the Wire Guard tunnel on your phone.
 * Ensure that the VPN is activated on your smartphone by checking your phone's settings.
+![IMG_2130](https://github.com/Walton5888/Walton5888.github.io/assets/110494531/1558f90c-db2e-48e9-ba0e-6d2bf18553c7)
 
