@@ -68,4 +68,8 @@ AllowedIPs = 10.0.0.2/32
 * Note: Put your own keys into the PrivateKey and Public Key sections
 * To get the encoding capabilites to generate a QR code for your app, type in this command: sudo apt-get install qrencode
 * Type in this command to generate the QR code: qrencode -t ansiutf8 < wg0.conf
+* Open the Wireguard app on your phone
+* Place your phone's camera at the QR code in your terminal.
+* You should now have access to the Wire Guard tunnel on your phone.
+* Ensure that the VPN is activated on your smartphone by checking your phone's settings.
 
