@@ -1,18 +1,25 @@
 # Using Digital Ocean Droplet to Create WireGuard VPN via Docker
 ## Step 1: Create a Digtial Ocean Account
+
 Visit this link to create your account: https://www.digitalocean.com/
+
 ## Step 2: Create a VM (Droplet)
+
 * Choose the create VM option
 * Choose Ubuntu 20.04 as your OS
 * Don't choose any add-ons
 * Choose the $6 (1GB) plan
 * Set a password
+
 ## Step 3: SSH into the VM 
+
 * Access the terminal on your computer
 * Type this in: ssh root@<your_ip_address>
 * Replace your_ip_address with your actual ip address
 * Type in your password, and you should have access to your droplet
+
 ## Step 4: Setting up Wireguard:
+
 * Start with the following command to build a wireguard directory: mkdir -p ~/wireguard/
 * Then, type in the following command to make the directory for the wireguard configuation: mkdir -p ~/wireguard/config/
 * Then, make a docker compose file for wireguard with the following command: nano ~/wireguard/docker-compose.yml
@@ -47,14 +54,21 @@ services:
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
  * Note: you will need to change the server url to your droplet's IP address, and TZ to your timezone.
+ 
  ## Step 5: Running Wireguard
+ 
  * Type in the following command to enter your wireguard directory: cd ~/wireguard/
  * Type in the following command to run your docker compose file: docker-compose up -d
  * Wireguard should be running now.
+ 
  ## Step 6: Connecting Wireguard VPN to a Smartphone.
+ 
  * Go to your phone's app store and download the Wireguard app.
  * Return to your terminal on your computer.
- * Type this into your terminal to generate both the public and private keys: wg genkey | tee privatekey | wg pubkey > publickey
+ * Type this command into your terminal to generate the private key: wg genkey
+ * This should generate a private key.
+ * Type this command into your terminal to generate the public key: wg pubkey your_private_key
+ * Replace your_private_key with the key you were provided.
  * Then, type this in to create your wireguard configuration file: nano wg0.conf
  * In the file, put your credentials (public, private key) in the file. Your file should look something like this: 
 [Interface]
@@ -83,7 +97,9 @@ AllowedIPs = 10.0.0.2/32
 <img width="513" alt="Screenshot 2023-11-29 at 9 13 25 PM" src="https://github.com/Walton5888/Walton5888.github.io/assets/110494531/4e385bd3-15bc-467f-bc3d-3831874151c1">
 
 * As you can see, the address is different since the VPN has been activated on your phone.
+
 ## Step 7: Verifying Wireguard Connection on Your Computer
+
 * Start by first checking the IP address on your computer by visiting this link: https://ipleak.net/
 
 <img width="226" alt="Screenshot 2023-11-29 at 6 59 48 PM" src="https://github.com/Walton5888/Walton5888.github.io/assets/110494531/e599840e-8af5-49b4-92d8-0d1281c2006d">
