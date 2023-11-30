@@ -68,7 +68,9 @@ AllowedIPs = 10.0.0.2/32
 * To get the encoding capabilites to generate a QR code for your app, type in this command: sudo apt-get install qrencode
 * Type in this command to generate the QR code: qrencode -t ansiutf8 < wg0.conf
 * Before proceeding any further, check the IP address on your phone by going to this link: https://ipleak.net/
+
 <img width="226" alt="Screenshot 2023-11-29 at 6 59 48 PM" src="https://github.com/Walton5888/Walton5888.github.io/assets/110494531/35b9f8b2-5957-4869-b83c-87e2c29081d7">
+
 * Now, Open the Wireguard app on your phone
 * Place your phone's camera at the QR code in your terminal.
 * You should now have access to the Wire Guard tunnel on your phone.
