@@ -15,7 +15,7 @@ Visit this link to create your account: https://www.digitalocean.com/
 
 * Access the terminal on your computer
 * Type this in: ssh root@<your_ip_address>
-* Replace your_ip_address with your actual ip address
+* Replace your_ip_address with your actual IP address
 * Type in your password, and you should have access to your droplet
 
 ## Step 4: Setting up Wireguard:
