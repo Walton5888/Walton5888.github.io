@@ -50,4 +50,22 @@ services:
  ## Step 5: Running Wireguard
  * Type in the following command to enter your wireguard directory: cd ~/wireguard/
  * Type in the following command to run your docker compose file: docker-compose up -d
- * Wireguard should be running now. 
+ * Wireguard should be running now.
+ ## Step 6: Connecting Wireguard VPN to a Smartphone.
+ * Go to your phone's app store and download the Wireguard app.
+ * Return to your terminal on your computer.
+ * Type this into your terminal to generate both the public and private keys: wg genkey | tee privatekey | wg pubkey > publickey
+ * Then, type this in to create your wireguard configuration file: nano wg0.conf
+ * In the file, put your credentials (public, private key) in the file. Your file should look something like this: 
+[Interface]
+PrivateKey = <server_private_key>
+Address = 10.0.0.1/24
+ListenPort = 51820
+
+[Peer]
+PublicKey = <client_public_key>
+AllowedIPs = 10.0.0.2/32
+* Note: Put your own keys into the PrivateKey and Public Key sections
+* To get the encoding capabilites to generate a QR code for your app, type in this command: sudo apt-get install qrencode
+* Type in this command to generate the QR code: qrencode -t ansiutf8 < wg0.conf
+
